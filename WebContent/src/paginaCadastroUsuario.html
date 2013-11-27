@@ -28,43 +28,43 @@
 
 <!-- Custom styles for this template -->
 <link href="css/carousel.css" rel="stylesheet">
+<link href="css/footer.css" rel="stylesheet">
 </head>
 <!-- NAVBAR
 ================================================== -->
 <body style="background-color: buttonface;">
 	<div class="navbar-wrapper">
-		<div class="container">
+      <div class="container">
 
-			<div class="navbar navbar-inverse navbar-static-top">
-				<div class="container">
-					<div class="navbar-header">
-						<a href="index.html"><img src="Imagem/Logo T-Shaped.jpg"
-							width="182" height="51" alt="" /></a>
-					</div>
-					<div class="navbar-collapse collapse">
-						<ul class="nav navbar-nav">
-							<li class="active"><a href="index.html">Home</a></li>
-							<li><a href="Sobre.html">About</a></li>
-							<li><a href="Contato.html">Contato</a></li>
-							<li></li>
-							<li class="dropdown"></li>
-							<li class="dropdown"></li>
-							<li class="dropdown"><a href="#" class="dropdown-toggle"
-								data-toggle="dropdown">Cadastros <b class="caret"></b></a>
-								<ul class="dropdown-menu">
-									<li><a href="Vagas.html">Vagas</a></li>
-									<li><a href="Empresa.html">Empresa</a></li>
-									<li><a href="Usuario.html">Usuario</a></li>
-									<li class="divider"></li>
-									<li class="dropdown-header">Nav header</li>
-									<li><a href="#">Alguma coisa</a></li>
-									<li><a href="#">Alguma coisa</a></li>
-								</ul></li>
-
-
-							<li></li>
-							<li></li>
-						</ul>
+        <div class="navbar navbar-inverse navbar-static-top">
+          <div class="container">
+            <div class="navbar-header"><a href="index.html"><img src="Imagem/Logo T-Shaped.jpg" width="182" height="51"  alt=""/></a></div>
+            <div class="navbar-collapse collapse">
+              <ul class="nav navbar-nav">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="Sobre.html">About</a></li>
+                 <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Consulta <b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                     <li><a href="BuscaVagas.php">Vagas</a></li>
+					 </li>  </ul>
+                </li>
+					
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Cadastros <b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                       <li><a href="paginaCadastroVaga.php">Vagas</a></li>
+                    <li><a href="paginaCadastroEmpresa.html">Empresa</a></li>
+                    <li><a href="paginaCadastroUsuario.html">Usuario</a></li>
+                                       
+                    
+                    </li>
+                  </ul>
+                </li>
+                
+                  <li></li>
+                  <li></li>
+                  <li></li></ul>
 						<div align="center" class="Login">
 
 							<label for="LOGIN"><span style="font-size: 15px">
@@ -238,31 +238,38 @@
 	</div>
 
 
+<div class="Rodapé">
+     <p align="center"> <span class="col-md-5"><img class="featurette-image img-responsive" src="imagem/nos.png" data-src="holder.js/50x50/auto" alt="Generic placeholder image"></span></p>
+  </div>
+      
+      
+      
+
+  <!-- /END THE FEATURETTES -->
 
 
-
-	<script src="assets/js/jquery.js"></script>
-	<script src="dist/js/bootstrap.min.js"></script>
-	<script src="assets/js/holder.js"></script>
-
-
-	<footer>
+     
+ <footer id="footer">
 		<p align="center">
-			<img src="imagem/rodape.jpg" width="990" height="117" alt="" />
+			<img align="center" src="imagem/rodape.jpg" width="990" height="117" alt="" />
 		</p>
 		<p class="pull-right">
 			<a href="#">Para cima</a>
 		</p>
 		<p>
-			&copy; T-Shaped 2013 Company, Inc. &middot; <a href="#">Privacy</a>
-			&middot; <a href="#">Terms</a>
+			&copy; T-Shaped 2013 Company, Inc. 
 		</p>
 	</footer>
-	<script src="http://code.jquery.com/jquery.js"></script>
-	<script src="bootstrap/js/bootstrap.min.js"></script>
+        </div><!-- /.container -->
 
 
-</body>
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="assets/js/jquery.js"></script>
+    <script src="dist/js/bootstrap.min.js"></script>
+    <script src="assets/js/holder.js"></script>
+  </body>
 
-
+<!-- Mirrored from getbootstrap.com/examples/carousel/ by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 10 Oct 2013 12:16:12 GMT -->
 </html>

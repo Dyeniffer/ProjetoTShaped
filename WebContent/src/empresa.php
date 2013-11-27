@@ -4,6 +4,7 @@
 include "CadastroEmpresa.php";
 include "CadastroEmpresaDAO.php";
 
+
 $cad = new CadastroEmpresa();
 
 $cad->setNomeEmpresa($_POST["nomeEmpresa"]);
@@ -18,7 +19,9 @@ $cad->setCnpj($_POST["cnpj"]);
 
 $dao = new CadastroEmpresaDAO();
 $dao->Insere($cad);
-
+//$dao->Update($cad);
+//$dao->Deleta($cad);
+//$dao->Lista($cad);
 
 
 

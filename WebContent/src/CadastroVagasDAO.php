@@ -1,11 +1,10 @@
 
 <?php 
 // Classe DAO para a tabela cadastroEmpresa. 
-
 include "PDOConnectionFactory.php";
 
 
-class CadastroEmpresaDAO extends PDOConnectionFactory {
+class CadastroVagasDAO extends PDOConnectionFactory {
 
 	// irá receber uma conexão
 
@@ -15,7 +14,7 @@ class CadastroEmpresaDAO extends PDOConnectionFactory {
 
    // constructor
 
-	public function CadastroEmpresaDAO(){
+	public function CadastroVagasDAO(){
 
 		$this->conex = PDOConnectionFactory::getConnection();
 
@@ -25,7 +24,7 @@ class CadastroEmpresaDAO extends PDOConnectionFactory {
 
 	// realiza uma inserção
 
-	public function Insere( $CadastroEmpresa ){
+	public function Insere( $CadastroVagas ){
 
 		try{
 
@@ -34,7 +33,7 @@ class CadastroEmpresaDAO extends PDOConnectionFactory {
 		
 			// isso ficaria uma porta aberta para um SQL Injection.
 
-			$stmt = $this->conex->prepare("INSERT INTO empresa (nomeEmpresa,areaAtuacao,telefone,email,cnpj) VALUES (?, ?, ?, ?, ?)");
+			$stmt = $this->conex->prepare("INSERT INTO vagas (areavaga_Id,grauestudo,requisito,descricao,salario,beneficio) VALUES (?, ?, ?,?,?,?)");
 
 			// valores encapsulados nas variáveis da classe CadastroEmpresa.
 
@@ -42,27 +41,22 @@ class CadastroEmpresaDAO extends PDOConnectionFactory {
 
 		
 
-			$stmt->bindValue(1, $CadastroEmpresa->getNomeEmpresa() );
+			$stmt->bindValue(1, $CadastroVagas->getAreaVaga() );
 
-			$stmt->bindValue(2, $CadastroEmpresa->getAreaAtuacao() );
+			$stmt->bindValue(2, $CadastroVagas->getGrauEstudo() );
 
-			$stmt->bindValue(3, $CadastroEmpresa->getTelefone() );
+			$stmt->bindValue(3, $CadastroVagas->getRequisitos() );
+			
+			$stmt->bindValue(4, $CadastroVagas->getDescricao() );
+			$stmt->bindValue(5, $CadastroVagas->getSalario() );
+			$stmt->bindValue(6, $CadastroVagas->getBeneficio() );
+		
 
-			$stmt->bindValue(4, $CadastroEmpresa->getEmail() );
-
-			$stmt->bindValue(5, $CadastroEmpresa->getCnpj() );
-
- 
+		
 
 			// executo a query preparada
 
-			if($stmt->execute())
-				echo "Inseriu";
-			else
-				print_r($stmt->errorInfo());
-
-			
- 
+			$stmt->execute();
 
 			// fecho a conexão
 
@@ -71,20 +65,20 @@ class CadastroEmpresaDAO extends PDOConnectionFactory {
 		// caso ocorra um erro, retorna o erro;
 
 		}catch ( PDOException $ex ){  echo "Erro: ".$ex->getMessage(); }
-
+	
 	}
 
  
 
 	// realiza um Update
 
-	public function Update( $CadastroEmpresa, $condicao ){
+	public function Update( $CadastroVagas, $condicao ){
 
 		try{		
 
 			// preparo a query de update - Prepare Statement
 
-			$stmt = $this->conex->prepare("UPDATE cadastroEmpresa SET nomeEmpresa=?, areaAtuacao=?, telefone=? ,email=?, cnpj=?  WHERE id=?");
+			$stmt = $this->conex->prepare("UPDATE cadastroVagas SET areaVaga=?, grauEstudo=?, requisitos=? WHERE id=?");
 
 			$this->conex->beginTransaction();
 
@@ -92,19 +86,14 @@ class CadastroEmpresaDAO extends PDOConnectionFactory {
 
 			// sequencia de índices que representa cada valor de minha query
 
-			$stmt->bindValue(1, $CadastroEmpresa->getId() );
+			
+			$stmt->bindValue(1, $CadastroVagas->getAreaVaga() );
 
-			$stmt->bindValue(2, $CadastroEmpresa->getNomeEmpresa() );
+			$stmt->bindValue(2, $CadastroVagas->getGrauEstudo() );
 
-			$stmt->bindValue(3, $CadastroEmpresa->getAreaAtuacao() );
+			$stmt->bindValue(3, $CadastroVagas->getRequisitos() );
 
-			$stmt->bindValue(4, $CadastroEmpresa->getTelefone() );
-
-			$stmt->bindValue(5, $CadastroEmpresa->getEmail() );
-
-			$stmt->bindValue(6, $CadastroEmpresa->getCnpj() );
-
-			// $stmt->bindValue(7, $condicao);
+			// $stmt->bindValue(4, $condicao);
 
  
 
@@ -138,7 +127,7 @@ class CadastroEmpresaDAO extends PDOConnectionFactory {
 
 			// executo a query
 
-			$num = $this->conex->exec("DELETE FROM CadastroEmpresa WHERE id=$id");
+			$num = $this->conex->exec("DELETE FROM CadastroVagas WHERE id=$id");
 
 			// caso seja execuado ele retorna o número de rows que foram afetadas.
 
@@ -160,7 +149,7 @@ class CadastroEmpresaDAO extends PDOConnectionFactory {
 
 				// executo a query
 
-				$stmt = $this->conex->query("SELECT * FROM CadastroEmpresa");
+				$stmt = $this->conex->query("SELECT * FROM CadastroVagas");
 
 			}else{
 
