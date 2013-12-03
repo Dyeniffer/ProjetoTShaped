@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>T-shaped</title>
+<link href="css/tshaped.css" rel="stylesheet" type="text/css" />
+<link href="//code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" type="text/css" rel="stylesheet"/>
+<script src="js/jquery.js" type="text/javascript"></script>
+<script src="js/tshaped.js" type="text/javascript"></script>
+<script src="//code.jquery.com/ui/1.10.3/jquery-ui.js" type="text/javascript"></script>
+</head>
+<body>
+
+<div id="principal">
+	
+	<div id="boxEsquerda">
+		<div id="horizontal"></div>
+		<div id="vertical"></div>
+	</div>
+	<div id="boxDireita">
+		<div id="menu">
+			<label><input type="radio" id="geral" name="tipoConhecimento" value="0" checked/>Abrangencia</label>
+			<label><input type="radio" id="especialidade" name="tipoConhecimento" value="1"/>Conhecimento</label>
+		
+		<!-- Abrangencia ou especialidade -->
+			<div class="conhecimento">
+			<label class="labelConhecimento">Seu nível de conhecimento:</label>
+			<label>Básico<input type="radio" id="basic" name="nivelConhecimento" value="0" checked/></label>
+			<label>Intermediário<input type="radio" id="intermate" name="nivelConhecimento" value="1"/></label>
+			<label>Avançado<input type="radio" id="advance" name="nivelConhecimento" value="2"/></label>
+			</div>
+			
+			<div class="abrangencia">
+			<label class="labelConhecimento">Seu nível de abrangência:</label>
+			<label>Tenho interesse de aprender<input type="radio" id="basic" name="nivelAbrangencia" value="0" checked/></label>
+			<label>Entendo<input type="radio" id="intermate" name="nivelAbrangencia" value="1"/></label>
+			<label>Sou bom<input type="radio" id="advance" name="nivelAbrangencia" value="2"/></label>
+			</div>
+			
+			
+			
+		 <input type="text" id="conhecimentoValue" class="inputConhecimento"/>
+		 <label class="labelConhecimento"> Selecione uma fonte:</label>
+		 <label class='tahoma'>Tahoma<input type="radio" name="fonte" value="0" checked/></label>
+		 <label class='comicSans'>Comic Sans<input type="radio" name="fonte" value="1"/></label>
+		 <label class='courier'>Courier<input type="radio" name="fonte" value="2"/></label>
+		 <button id="enviar">Enviar</button>
+		</div>
+		
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		
+		<button id="salvarTshaped">Salvar meu tshaped</button>
+		
+	</div>
+</div>
+
+
+</body>
+</html>
