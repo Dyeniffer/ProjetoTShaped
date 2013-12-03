@@ -81,7 +81,7 @@ $(document).ready(function(){
 		
 		$("#vertical p").each(function(){
 			$(this).draggable();
-		})
+		});
 		
 	});
 	
