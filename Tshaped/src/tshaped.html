@@ -19,32 +19,41 @@
 	</div>
 	<div id="boxDireita">
 		<div id="menu">
+		<div class="organiza">
 			<label><input type="radio" id="geral" name="tipoConhecimento" value="0" checked/>Abrangencia</label>
 			<label><input type="radio" id="especialidade" name="tipoConhecimento" value="1"/>Conhecimento</label>
-		
+		</div>
 		<!-- Abrangencia ou especialidade -->
 			<div class="conhecimento">
-			<label class="labelConhecimento">Seu nível de conhecimento:</label>
-			<label>Básico<input type="radio" id="basic" name="nivelConhecimento" value="0" checked/></label>
-			<label>Intermediário<input type="radio" id="intermate" name="nivelConhecimento" value="1"/></label>
-			<label>Avançado<input type="radio" id="advance" name="nivelConhecimento" value="2"/></label>
+			<div class="organiza">
+				<label class="labelConhecimento">Seu nível de conhecimento:</label>
+			</div>
+				<div class="organizacaoInputs">
+					<label><input type="radio" id="basic" name="nivelConhecimento" value="0" checked/>Básico</label>
+					<label><input type="radio" id="intermate" name="nivelConhecimento" value="1"/>Intermediário</label>
+					<label><input type="radio" id="advance" name="nivelConhecimento" value="2"/>Avançado</label>
+				</div>
 			</div>
 			
 			<div class="abrangencia">
-			<label class="labelConhecimento">Seu nível de abrangência:</label>
-			<label>Tenho interesse de aprender<input type="radio" id="basic" name="nivelAbrangencia" value="0" checked/></label>
-			<label>Entendo<input type="radio" id="intermate" name="nivelAbrangencia" value="1"/></label>
-			<label>Sou bom<input type="radio" id="advance" name="nivelAbrangencia" value="2"/></label>
+			<div class="organiza">
+				<label class="labelConhecimento">Seu nível de abrangência (geral)</label>
+			</div> 
+			<div class="organizacaoInputs">
+				<label><input type="radio" id="basic" name="nivelAbrangencia" value="0" checked/>Interesse</label>
+				<label><input type="radio" id="intermate" name="nivelAbrangencia" value="1"/>Entendo</label>
+				<label><input type="radio" id="advance" name="nivelAbrangencia" value="2"/>Sou bom</label>
+			</div>
 			</div>
 			
-			
-			
 		 <input type="text" id="conhecimentoValue" class="inputConhecimento"/>
-		 <label class="labelConhecimento"> Selecione uma fonte:</label>
-		 <label class='tahoma'>Tahoma<input type="radio" name="fonte" value="0" checked/></label>
-		 <label class='comicSans'>Comic Sans<input type="radio" name="fonte" value="1"/></label>
-		 <label class='courier'>Courier<input type="radio" name="fonte" value="2"/></label>
-		 <button id="enviar">Enviar</button>
+		 <label class="labelConhecimento"> Selecione uma fonte</label>
+		<div class="organizacaoInputs">
+			 <label class='tahoma'><input type="radio" name="fonte" value="0" checked/>Tahoma</label>
+			 <label class='comicSans'><input type="radio" name="fonte" value="1"/>Comic Sans</label>
+			 <label class='courier'><input type="radio" name="fonte" value="2"/>Courier</label>
+		 </div>
+		 <button id="enviar" class="button"><- Enviar para o tshaped</button>
 		</div>
 		
 		<br>
@@ -54,7 +63,7 @@
 		<br>
 		<br>
 		
-		<button id="salvarTshaped">Salvar meu tshaped</button>
+		<button id="salvarTshaped" class="button">Salvar meu tshaped</button>
 		
 	</div>
 </div>

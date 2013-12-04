@@ -88,19 +88,38 @@ $(document).ready(function(){
 	
 	$("#salvarTshaped").click(function(){
 		
-		$("#vertical p").each(function(){
-			valorp = $(this).val();
+		$("#horizontal p").each(function(){
+			valorp = $(this).html();
 			tpGeral = 0;
 			css_left = $(this).css('left');
 			css_top = $(this).css('top');
 			css_fonte = $(this).css('font-family');
-			css_size = $(this).css('size');
+			css_size = $(this).css('font-size');
 			
 			$.ajax({
 				url:'ajaxTshaped.php?valorp='+valorp+'&tipo='+tpGeral+'&css_left='+css_left+'&css_top='+css_top+'&css_fonte='+css_fonte+'&css_size='+css_size,
 				type:'POST',
 				success:function(){
-				
+					console.log('1');
+				},
+				dataType:'json'
+			});
+		});
+		
+		
+		$("#vertical p").each(function(){
+			valorp = $(this).html();
+			tpGeral = 1;
+			css_left = $(this).css('left');
+			css_top = $(this).css('top');
+			css_fonte = $(this).css('font-family');
+			css_size = $(this).css('font-size');
+			
+			$.ajax({
+				url:'ajaxTshaped.php?valorp='+valorp+'&tipo='+tpGeral+'&css_left='+css_left+'&css_top='+css_top+'&css_fonte='+css_fonte+'&css_size='+css_size,
+				type:'POST',
+				success:function(){
+					console.log('1');
 				},
 				dataType:'json'
 			});

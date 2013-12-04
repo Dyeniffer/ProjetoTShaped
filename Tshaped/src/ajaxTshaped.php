@@ -1,10 +1,27 @@
 <?php
 
-include "PDOConnectionFactory.php";
+include_once 'CadastroTShaped.php';
+include_once 'TShapedDAO.php';
 
-$_POST['css_size'];
-$_POST['css_left'];
-$_POST['css_top'];
-$_POST['css_fonte'];
-$_POST['tipo'];
-$_POST['valorp'];
+$css_size = $_REQUEST['css_size'];
+$css_left = $_REQUEST['css_left'];
+$css_top = $_REQUEST['css_top'];
+$css_fonte = $_REQUEST['css_fonte'];
+$tipo = $_REQUEST['tipo'];
+$valor = $_REQUEST['valorp'];
+//$id_usuario = $_SESSION['cod_usuario'];
+$id_usuario = 1;
+
+$tshaped = new CadastroTShaped();
+$tshaped->css_size = $css_size;
+$tshaped->css_left = $css_left;
+$tshaped->css_top = $css_top;
+$tshaped->css_fonte = $css_fonte;
+$tshaped->tp_conhecimento = $tipo;
+$tshaped->texto = $valor;
+$tshaped->id_usuario = $id_usuario;
+
+$tshapedDAO = new TShapedDAO();
+$tshapedDAO->Insere($tshaped);
+
+
