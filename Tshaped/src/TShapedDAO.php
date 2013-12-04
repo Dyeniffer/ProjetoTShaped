@@ -78,7 +78,7 @@ class TShapedDAO extends PDOConnectionFactory {
 		
 		try{
 		
-			$stmt = $this->conex->prepare("SELECT * FROM TSHAPED WHERE ID_USUARIO = " . $id );
+			$stmt = $this->conex->prepare("SELECT * FROM TSHAPED WHERE ID_USUARIO = " . $id ." AND TP_CONHECIMENTO = 0");
 			$stmt->execute();
 			
 			$dadosTshaped = array();
@@ -105,6 +105,40 @@ class TShapedDAO extends PDOConnectionFactory {
 		
 		
 	}
+	
+	function buscaTshapedVertical($id) {
+	
+		try{
+	
+			$stmt = $this->conex->prepare("SELECT * FROM TSHAPED WHERE ID_USUARIO = " . $id ." AND TP_CONHECIMENTO = 1");
+			$stmt->execute();
+				
+			$dadosTshaped = array();
+			$i=0;
+			while($dados = $stmt->fetch(PDO::FETCH_OBJ)) {
+				$dadosTshaped[$i]['texto'] = $dados->texto;
+				$dadosTshaped[$i]['css_top'] = $dados->css_top;
+				$dadosTshaped[$i]['css_left'] = $dados->css_left;
+				$dadosTshaped[$i]['css_size'] = $dados->css_size;
+				$dadosTshaped[$i]['css_fonte'] = $dados->css_fonte;
+				$dadosTshaped[$i]['tp_conhecimento'] = $dados->tp_conhecimento;
+				$i++;
+			}
+				
+			return $dadosTshaped;
+	
+			// fecho a conexão
+	
+			$this->conex = null;
+	
+			// caso ocorra um erro, retorna o erro;
+	
+		}catch ( PDOException $ex ){  echo "Erro: ".$ex->getMessage(); }
+	
+	
+	}
+	
+	
 	
 }
 ?>
