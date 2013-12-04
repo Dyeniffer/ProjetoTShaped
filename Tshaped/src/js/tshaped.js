@@ -86,6 +86,28 @@ $(document).ready(function(){
 	});
 	
 	
+	$("#salvarTshaped").click(function(){
+		
+		$("#vertical p").each(function(){
+			valorp = $(this).val();
+			tpGeral = 0;
+			css_left = $(this).css('left');
+			css_top = $(this).css('top');
+			css_fonte = $(this).css('font-family');
+			css_size = $(this).css('size');
+			
+			$.ajax({
+				url:'ajaxTshaped.php?valorp='+valorp+'&tipo='+tpGeral+'&css_left='+css_left+'&css_top='+css_top+'&css_fonte='+css_fonte+'&css_size='+css_size,
+				type:'POST',
+				success:function(){
+				
+				},
+				dataType:'json'
+			});
+		});
+		
+		
+	});
 	
 	
 	
