@@ -36,7 +36,7 @@ $dao = new BuscaVagasDao();
   
   
  <?php
- $dao ->retornaVagas ($areaVaga=$_POST['areavaga'], $busca=$_POST['busca']);
+ 	$dao ->retornaVagas ($areaVaga=$_POST['areavaga'], $busca=$_POST['busca']);
   ?>
  
   <body style="background-color: buttonface;">

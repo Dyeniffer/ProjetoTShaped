@@ -71,11 +71,11 @@ class CadastroUsuarioDAO extends PDOConnectionFactory {
 			// executo a query preparada
 
 			if($stmt->execute())
-				echo "ok";
-			else
+				return true;
+			else{
 				print_r($stmt->errorInfo());
-
- 
+				return false;	
+			}
 
 			// fecho a conexão
 

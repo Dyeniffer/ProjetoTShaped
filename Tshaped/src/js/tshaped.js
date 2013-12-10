@@ -97,10 +97,9 @@ $(document).ready(function(){
 			css_size = $(this).css('font-size');
 			
 			$.ajax({
-				url:'ajaxTshaped.php?valorp='+valorp+'&tipo='+tpGeral+'&css_left='+css_left+'&css_top='+css_top+'&css_fonte='+css_fonte+'&css_size='+css_size,
+				url:'ajaxTshaped.php?valorp='+valorp+'&tipo='+tpGeral+'&css_left='+css_left+'&css_top='+css_top+'&css_fonte='+css_fonte+'&css_size='+css_size+'&idUsuario='$("#idUsuario").val(),
 				type:'POST',
 				success:function(){
-					console.log('1');
 				},
 				dataType:'json'
 			});
@@ -119,12 +118,14 @@ $(document).ready(function(){
 				url:'ajaxTshaped.php?valorp='+valorp+'&tipo='+tpGeral+'&css_left='+css_left+'&css_top='+css_top+'&css_fonte='+css_fonte+'&css_size='+css_size,
 				type:'POST',
 				success:function(){
-					console.log('1');
+					setTimeout(function(){ window.location = "index.html"  },10000);
 				},
 				dataType:'json'
 			});
 		});
 		
+		$("#salvarTshaped").val("Aguarde,estamos processando seu tshaped");
+		$("#salvarTshaped").attr('disabled',true);
 		
 	});
 	

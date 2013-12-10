@@ -57,6 +57,8 @@ class BuscaVagasDao extends PDOConnectionFactory {
 			echo '<td><b> Salario </b></td>';
 				
 			echo '<td><b> Beneficio </b> </td> ';
+			
+			echo '<td><b> Visualizar t-shaped candidato</b> </td> ';
 				
 			echo '</tr> ';
 			echo "<tr>";

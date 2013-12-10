@@ -59,6 +59,7 @@ class BuscaCurriculosDAO extends PDOConnectionFactory {
 			
 			while ( $dados = $stmt->fetch ( PDO::FETCH_OBJ ) ) {
 				
+				$idUsuario = $dados->id;
 				$nome = $dados->nome;
 				$email = $dados->email;
 				$telefone = $dados->telefone;
@@ -80,7 +81,7 @@ class BuscaCurriculosDAO extends PDOConnectionFactory {
 				
 				echo "<td> $estado</td>";
 				
-				echo "<td><button>Colocar aqui o link do T Shaped</button></td>";
+				echo "<td><a href='visualizarTshaped.php?idUsuario=$idUsuario'>Visualizar tshaped candidato</a></td>";
 				
 				echo "</tr>";
 			}

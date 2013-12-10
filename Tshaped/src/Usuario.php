@@ -18,13 +18,14 @@ $cad->setNomeMae($_POST["nomeMae"]);
 $cad->setCep($_POST["cep"]);
 $cad->setAreaAtuacao($_POST["areaAtuacao"]);
 
-
-
-
-
 $dao = new CadastroUsuarioDAO();
-$dao->Insere($cad);
+$retorno = $dao->Insere($cad);
 
+if($retorno) {
+		header("Location: tshaped.html");
+} else {
+	echo "<script type='text/javascript'>alert('Não foi possivel cadastrar o usuário')</script>";
+}
 
 
 ?>

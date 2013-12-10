@@ -4,9 +4,11 @@ include_once 'CadastroTShaped.php';
 include_once 'TShapedDAO.php';
 
 
+$idUsuario = $_GET['idUsuario'];
+
 $tshaped = new TShapedDAO();
-$result = $tshaped->buscaTshapedHorizontal(1);
-$resultVertical = $tshaped->buscaTshapedVertical(1);
+$result = $tshaped->buscaTshapedHorizontal($idUsuario);
+$resultVertical = $tshaped->buscaTshapedVertical($idUsuario);
 
 ?>
 
@@ -59,6 +61,8 @@ $resultVertical = $tshaped->buscaTshapedVertical(1);
 			
 			</div>
 		</div>
+
+<input type="hidden" id="idUsuario" value="<?php $idUsuario ?>">
 
 	</div>
 

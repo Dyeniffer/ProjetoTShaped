@@ -51,7 +51,7 @@ class TShapedDAO extends PDOConnectionFactory {
 			$stmt->bindValue(4, $tshaped->css_size);
 
 			//$stmt->bindValue(5, $tshaped->id_usuario);
-			$stmt->bindValue(5, 1);
+			$stmt->bindValue(5, $tshaped->id);
 			
 			$stmt->bindValue(6, $tshaped->tp_conhecimento);
 			
@@ -59,7 +59,11 @@ class TShapedDAO extends PDOConnectionFactory {
 
 			// executo a query preparada
 
-			$stmt->execute();
+			if($stmt->execute()){
+				return true;
+			} else {
+				return false;
+			}
 
  
 
