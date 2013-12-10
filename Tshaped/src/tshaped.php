@@ -1,4 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<?php $id = $_GET['idUsuario'] ;?>
+
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
@@ -26,18 +29,18 @@
 		<!-- Abrangencia ou especialidade -->
 			<div class="conhecimento">
 			<div class="organiza">
-				<label class="labelConhecimento">Seu nível de conhecimento:</label>
+				<label class="labelConhecimento">Seu nÃ­vel de conhecimento:</label>
 			</div>
 				<div class="organizacaoInputs">
-					<label><input type="radio" id="basic" name="nivelConhecimento" value="0" checked/>Básico</label>
-					<label><input type="radio" id="intermate" name="nivelConhecimento" value="1"/>Intermediário</label>
-					<label><input type="radio" id="advance" name="nivelConhecimento" value="2"/>Avançado</label>
+					<label><input type="radio" id="basic" name="nivelConhecimento" value="0" checked/>BÃ¡sico</label>
+					<label><input type="radio" id="intermate" name="nivelConhecimento" value="1"/>IntermediÃ¡rio</label>
+					<label><input type="radio" id="advance" name="nivelConhecimento" value="2"/>AvanÃ§ado</label>
 				</div>
 			</div>
 			
 			<div class="abrangencia">
 			<div class="organiza">
-				<label class="labelConhecimento">Seu nível de abrangência (geral)</label>
+				<label class="labelConhecimento">Seu nÃ­vel de abrangÃªncia (geral)</label>
 			</div> 
 			<div class="organizacaoInputs">
 				<label><input type="radio" id="basic" name="nivelAbrangencia" value="0" checked/>Interesse</label>
@@ -64,7 +67,7 @@
 		<br>
 		
 		<button id="salvarTshaped" class="button">Salvar meu tshaped</button>
-		
+                <input type="hidden" id="idUsuario" value="<?php echo $id ?>" />
 	</div>
 </div>
 

@@ -3,10 +3,11 @@
 include_once 'CadastroTShaped.php';
 include_once 'TShapedDAO.php';
 
+$id_usuario = $_GET['idUsuario'];
 
 $tshaped = new TShapedDAO();
-$result = $tshaped->buscaTshapedHorizontal(1);
-$resultVertical = $tshaped->buscaTshapedVertical(1);
+$result = $tshaped->buscaTshapedHorizontal($id_usuario);
+$resultVertical = $tshaped->buscaTshapedVertical($id_usuario);
 
 ?>
 

@@ -23,8 +23,11 @@ $cad->setAreaAtuacao($_POST["areaAtuacao"]);
 
 
 $dao = new CadastroUsuarioDAO();
-$dao->Insere($cad);
+$result = $dao->Insere($cad);
 
-
+if($result) {
+    header("Location: tshaped.php?idUsuario=$result");
+    
+}
 
 ?>

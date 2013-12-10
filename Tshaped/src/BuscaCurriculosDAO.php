@@ -2,7 +2,7 @@
 include "PDOConnectionFactory.php";
 class BuscaCurriculosDAO extends PDOConnectionFactory {
 	
-	// irá receber uma conexão
+	// irï¿½ receber uma conexï¿½o
 	public $conex = null;
 	
 	// constructor
@@ -65,6 +65,7 @@ class BuscaCurriculosDAO extends PDOConnectionFactory {
 				$datanascimento = $dados->datanascimento;
 				$cidade = $dados->cidade;
 				$estado = $dados->estados;
+                                $id  = $dados->id;
 				
 				echo "<tr>";
 				
@@ -80,7 +81,7 @@ class BuscaCurriculosDAO extends PDOConnectionFactory {
 				
 				echo "<td> $estado</td>";
 				
-				echo "<td><button>Colocar aqui o link do T Shaped</button></td>";
+				echo "<td><a href='visualizarTshaped.php?idUsuario=$id'>Visualizar tshaped</a></td>";
 				
 				echo "</tr>";
 			}

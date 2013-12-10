@@ -6,7 +6,7 @@ include "PDOConnectionFactory.php";
 
 class CadastroUsuarioDAO extends PDOConnectionFactory {
 
-	// irá receber uma conexão
+	// irï¿½ receber uma conexï¿½o
 
 	public $conex = null;
 
@@ -22,22 +22,22 @@ class CadastroUsuarioDAO extends PDOConnectionFactory {
 
  
 
-	// realiza uma inserção
+	// realiza uma inserï¿½ï¿½o
 
 	public function Insere( $CadastroUsuarioDAO ){
 
 		try{
 
-			// preparo a query de inserçao - Prepare Statement
+			// preparo a query de inserï¿½ao - Prepare Statement
 
 		
 			// isso ficaria uma porta aberta para um SQL Injection.
 
 			$stmt = $this->conex->prepare("INSERT INTO usuario (id,nome,email,telefone,datanascimento,sexo, endereco,estados, cidade, nomePai, nomeMae, cep, areaAtuacao) VALUES (?,?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 
-			// valores encapsulados nas variáveis da classe CadastroUsuarioDAO.
+			// valores encapsulados nas variï¿½veis da classe CadastroUsuarioDAO.
 
-			// sequencia de índices que representa cada valor de minha query
+			// sequencia de ï¿½ndices que representa cada valor de minha query
 
 			$stmt->bindValue(1, $CadastroUsuarioDAO->getId() );
 
@@ -70,14 +70,16 @@ class CadastroUsuarioDAO extends PDOConnectionFactory {
 
 			// executo a query preparada
 
-			if($stmt->execute())
-				echo "ok";
+                        $last_id = $stmt->execute();
+                        
+			if($last_id)
+				return $last_id;
 			else
 				print_r($stmt->errorInfo());
 
  
 
-			// fecho a conexão
+			// fecho a conexï¿½o
 
 			$this->conex = null;
 
@@ -101,9 +103,9 @@ class CadastroUsuarioDAO extends PDOConnectionFactory {
 
 			$this->conex->beginTransaction();
 
-			// valores encapsulados nas variáveis da classe CadastroEmpresaDAO.
+			// valores encapsulados nas variï¿½veis da classe CadastroEmpresaDAO.
 
-			// sequencia de índices que representa cada valor de minha query
+			// sequencia de ï¿½ndices que representa cada valor de minha query
 
 			$stmt->bindValue(1, $CadastroUsuarioDAO->getId() );
 
@@ -144,7 +146,7 @@ class CadastroUsuarioDAO extends PDOConnectionFactory {
 
  
 
-			// fecho a conexão
+			// fecho a conexï¿½o
 
 			$this->conex = null;
 
@@ -166,7 +168,7 @@ class CadastroUsuarioDAO extends PDOConnectionFactory {
 
 			$num = $this->conex->exec("DELETE FROM CadastroUsuarioDAO WHERE id=$id");
 
-			// caso seja execuado ele retorna o número de rows que foram afetadas.
+			// caso seja execuado ele retorna o nï¿½mero de rows que foram afetadas.
 
 			if( $num >= 1 ){ return $num; } else { return 0; }	
 
