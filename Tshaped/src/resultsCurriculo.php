@@ -2,8 +2,8 @@
 
 <?php
 
-include "BuscaVagasDao.php";
-$dao = new BuscaVagasDao();
+include "BuscaCurriculosDAO.php";
+$dao = new BuscaCurriculosDAO();
 
 
 ?>
@@ -36,7 +36,7 @@ $dao = new BuscaVagasDao();
   
   
  <?php
- $dao ->retornaVagas ($areaVaga=$_POST['areavaga'], $busca=$_POST['busca']);
+ $dao ->retornaCurriculos ($areaCurriculo=$_POST['areaCurriculo']);
   ?>
  
   <body style="background-color: buttonface;">
@@ -57,6 +57,7 @@ $dao = new BuscaVagasDao();
 								data-toggle="dropdown">Consulta <b class="caret"></b></a>
 								<ul class="dropdown-menu">
 									<li><a href="BuscaVagas.php">Vagas</a></li></li>
+									   <li class="active"><a href="paginaBuscaCurriculos.php">Curr&iacute;culos</a></li>
 						</ul>
 						</li>
 

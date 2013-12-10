@@ -1,7 +1,6 @@
 <?php
-
-include "BuscaVagasDao.php";
-$dao = new BuscaVagasDao();
+include "BuscaCurriculosDAO.php";
+$dao = new BuscaCurriculosDAO();
 ?>
 
 
@@ -22,7 +21,7 @@ $dao = new BuscaVagasDao();
 <head>
 
 
-<title>Cadastro de Usuario</title>
+<title>Consulta de Curr&iacute;culos</title>
 
 
 
@@ -45,7 +44,7 @@ $dao = new BuscaVagasDao();
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Consulta <b class="caret"></b></a>
                   <ul class="dropdown-menu">
                       <li class="active"><a href="BuscaVagas.php">Vagas</a></li>
-                       <li class="active"><a href="paginaBuscaCurriculos.php">Curr&iacute;culos</a></li>
+                        <li class="active"><a href="paginaBuscaCurriculos.php">Curr&iacute;culos</a></li>
 					 </li>  </ul>
                 </li>
 					
@@ -55,9 +54,6 @@ $dao = new BuscaVagasDao();
                    <li><a href="paginaCadastroVaga.php">Vagas</a></li>
                     <li><a href="paginaCadastroEmpresa.html">Empresa</a></li>
                     <li><a href="paginaCadastroUsuario.html">Usuario</a></li>
-                                       
-                                       
-                    
                     </li>
                   </ul>
                 </li>
@@ -82,18 +78,15 @@ $dao = new BuscaVagasDao();
 <div align="center" style="font-size: 36px; color:black;">Buscar Vagas</div>
 	
 	
-<form name="search_form" method="post" action="results.php">
+<form name="search_form" method="post" action="resultsCurriculo.php">
 
 
- <select class="col-xs-3" name="areavaga" id ="areavaga">
-<option value="">Selecione a Area</option>
+ <select class="col-xs-3" name="areaCurriculo" id ="areaCurriculo">
+<option value="">Selecione a &Aacute;rea de Atua&ccedil;&atilde;o</option>
   
-	<?php $dao->areasVagas(); ?>
+	<?php $dao->areasAtuacao(); ?>
     
   </select> 
-  
-  <div align="center" class="col-xs-2">
-  <input  class="form-control" placeholder="Filtro" name="busca" id ="busca"/>  </div> 
   
      <input class="btn btn-primary" type="submit" name="submit" value="Consultar"/> 
     

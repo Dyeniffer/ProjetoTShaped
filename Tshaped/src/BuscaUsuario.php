@@ -1,7 +1,9 @@
 <?php
 
-include "BuscaVagasDao.php";
-$dao = new BuscaVagasDao();
+include "conexao.php";
+
+
+
 ?>
 
 
@@ -22,7 +24,7 @@ $dao = new BuscaVagasDao();
 <head>
 
 
-<title>Cadastro de Usuario</title>
+<title>Buscar Vagas</</title>
 
 
 
@@ -45,7 +47,6 @@ $dao = new BuscaVagasDao();
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Consulta <b class="caret"></b></a>
                   <ul class="dropdown-menu">
                       <li class="active"><a href="BuscaVagas.php">Vagas</a></li>
-                       <li class="active"><a href="paginaBuscaCurriculos.php">Curr&iacute;culos</a></li>
 					 </li>  </ul>
                 </li>
 					
@@ -85,15 +86,24 @@ $dao = new BuscaVagasDao();
 <form name="search_form" method="post" action="results.php">
 
 
- <select class="col-xs-3" name="areavaga" id ="areavaga">
+ <select class="col-xs-3" name="areavaga">
 <option value="">Selecione a Area</option>
   
-	<?php $dao->areasVagas(); ?>
+  <?php
+$getareavagas= "SELECT *
+FROM areavagas";
+$getareavagasquery = mysql_query($getareavagas) or die (mysql_error());
+ while($getareavagaslinha = mysql_fetch_array($getareavagasquery)){
+ $areavaga = $getareavagaslinha ['areavaga'];
+ $areavaga_id = $getareavagaslinha ['areavaga_id'];
+ echo "<option value='$areavaga_id'> $areavaga</option>";
+ } 
+    ?>
     
   </select> 
   
   <div align="center" class="col-xs-2">
-  <input  class="form-control" placeholder="Filtro" name="busca" id ="busca"/>  </div> 
+  <input  class="form-control" placeholder="Filtro" name="busca"/>  </div> 
   
      <input class="btn btn-primary" type="submit" name="submit" value="Consultar"/> 
     

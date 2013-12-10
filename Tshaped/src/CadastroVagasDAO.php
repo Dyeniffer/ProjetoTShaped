@@ -27,13 +27,15 @@ class CadastroVagasDAO extends PDOConnectionFactory {
 	public function Insere( $CadastroVagas ){
 
 		try{
+			
+			print_r($CadastroVagas);
 
 			// preparo a query de inserçao - Prepare Statement
 
 		
 			// isso ficaria uma porta aberta para um SQL Injection.
 
-			$stmt = $this->conex->prepare("INSERT INTO vagas (areavaga_Id,grauestudo,requisito,descricao,salario,beneficio) VALUES (?, ?, ?,?,?,?)");
+			$stmt = $this->conex->prepare("INSERT INTO vagas (areavaga_id, grauestudo, requisito, descricao, salario, beneficio) VALUES (?, ?, ?, ?, ?, ?)");
 
 			// valores encapsulados nas variáveis da classe CadastroEmpresa.
 
@@ -42,11 +44,8 @@ class CadastroVagasDAO extends PDOConnectionFactory {
 		
 
 			$stmt->bindValue(1, $CadastroVagas->getAreaVaga() );
-
 			$stmt->bindValue(2, $CadastroVagas->getGrauEstudo() );
-
-			$stmt->bindValue(3, $CadastroVagas->getRequisitos() );
-			
+			$stmt->bindValue(3, $CadastroVagas->getRequisitos() );			
 			$stmt->bindValue(4, $CadastroVagas->getDescricao() );
 			$stmt->bindValue(5, $CadastroVagas->getSalario() );
 			$stmt->bindValue(6, $CadastroVagas->getBeneficio() );
@@ -57,10 +56,11 @@ class CadastroVagasDAO extends PDOConnectionFactory {
 			// executo a query preparada
 
 			$stmt->execute();
-
-			// fecho a conexão
-
+			
+	
 			$this->conex = null;
+			
+			
 
 		// caso ocorra um erro, retorna o erro;
 
