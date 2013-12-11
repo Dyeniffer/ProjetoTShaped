@@ -1,6 +1,7 @@
-@CHARSET "ISO-8859-1";
 
-
+ form {
+    margin: 0px 250px 0px;
+}
 label {
 	font-family: "tahoma";
 	size:13px;

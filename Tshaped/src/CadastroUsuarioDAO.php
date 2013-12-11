@@ -70,10 +70,11 @@ class CadastroUsuarioDAO extends PDOConnectionFactory {
 
 			// executo a query preparada
 
-                        $last_id = $stmt->execute();
                         
-			if($last_id)
-				return $last_id;
+                        
+			if($stmt->execute())
+                            //retorna last id inserido
+				return $this->conex->lastInsertId();
 			else
 				print_r($stmt->errorInfo());
 

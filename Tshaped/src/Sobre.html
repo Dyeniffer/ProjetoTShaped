@@ -27,65 +27,61 @@
 <!-- NAVBAR
 ================================================== -->
   <body>
-   <div class="navbar-wrapper">
-      <div class="container">
 
-        <div class="navbar navbar-inverse navbar-static-top">
-          <div class="container">
-            <div class="navbar-header"><a href="index.html"><img src="Imagem/Logo T-Shaped.jpg" width="182" height="51"  alt=""/></a></div>
-            <div class="navbar-collapse collapse">
-              <ul class="nav navbar-nav">
+    <!-- Menu -->
+  
+  <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+  
+   <div class="navbar-header">
+        <a class="navbar-brand" href="index.html">T-Shaped</a>
+  </div>
+   
+           <!-- Menu Restante -->
+  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <ul class="nav navbar-nav">
                 <li><a href="index.html">Home</a></li>
                 <li class="active"><a href="Sobre.html">About</a></li>
                  <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Consulta <b class="caret"></b></a>
                   <ul class="dropdown-menu">
-                      <li><a href="BuscaVagas.php">Vagas</a></li>
-					 </li>  </ul>
-                </li>
-					
+                          <li><a href="BuscaVagas.php">Vagas</a></li>
+						   <li><a href="paginaBuscaCurriculos.php">Usuario</a></li>
+						   <li><a href="visualizarTshaped.php">T-Shaped</a></li>
+           </li>  </ul>
+                        
                 <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Cadastros <b class="caret"></b></a>
                   <ul class="dropdown-menu">
-                        <li><a href="paginaCadastroVaga.php">Vagas</a></li>
+                   <li><a href="paginaCadastroVaga.php">Vagas</a></li>
                     <li><a href="paginaCadastroEmpresa.html">Empresa</a></li>
-                    <li><a href="paginaCadastroUsuario.html">Usuario</a></li>          
-                    
+                    <li><a href="paginaCadastroUsuario.html">Usuario</a></li>
+                                       <li><a href="tshaped.php">T-Shaped</a></li>
+                 
                     </li>
-                  </ul>
-                </li>
-                
-                  <li></li>
-                  <li></li>
-                  <li></li></ul>
-                 <form align="right"class="form-inline" role="form">
-  <div align="right" class="col-xs-2">
-    <label class="sr-only" for="exampleInputEmail2">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Enter email">
+                  </ul> </ul>  
+  
+     <!-- Menu Login -->
+   <form class="navbar-form navbar-right" role="form">
+  <div class="form-group">
+    <label class="sr-only" for="exampleInputEmail2">E-mail</label>
+    <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Login">
   </div>
-  <div align="right" class="col-xs-2">
-    <label class="sr-only" for="exampleInputPassword2">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password">
+  <div class="form-group">
+    <label class="sr-only" for="exampleInputPassword2">Senha</label>
+    <input type="senha" class="form-control" id="exampleInputPassword2" placeholder="Senha">
   </div>
-   
-  <button type="submit" class="btn btn-default">logar</button>
-</form></div>
-          </div></div>
-      </div>
-          
+   <button type="submit" class="btn btn-default">Entrar</button>
+</form>
+</form>
+
+   </div></nav>
+    <!-- Fim do Menu -->
+                      
+                  
           
                     
 
-              </ul>
-			  
-			 			  
-			   
-  </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
+            
 
 
     <!-- Carousel
@@ -162,12 +158,6 @@
    <footer id="footer">
 		<p align="center">
 			<img align="center" src="imagem/rodape.jpg" width="990" height="117" alt="" />
-		</p>
-		<p class="pull-right">
-			<a href="#">Para cima</a>
-		</p>
-		<p>
-			&copy; T-Shaped 2013 Company, Inc. 
 		</p>
 	</footer>
         </div><!-- /.container -->

@@ -19,9 +19,6 @@ $cad->setCep($_POST["cep"]);
 $cad->setAreaAtuacao($_POST["areaAtuacao"]);
 
 
-
-
-
 $dao = new CadastroUsuarioDAO();
 $result = $dao->Insere($cad);
 

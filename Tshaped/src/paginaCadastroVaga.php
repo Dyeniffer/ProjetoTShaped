@@ -26,57 +26,57 @@ include "conexao.php";
 
 <link href="css/carousel.css" rel="stylesheet">
 <link href="css/footer.css" rel="stylesheet">
+<link href="css/tshaped.css" rel="stylesheet">
 </head>
 <!-- NAVBAR
 ================================================== -->
 <body style="background-color: buttonface;">
-	<div class="navbar-wrapper">
-      <div class="container">
+<!-- Menu -->
+  
+  <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+  
+   <div class="navbar-header">
+        <a class="navbar-brand" href="index.html">T-Shaped</a>
+  </div>
 
-        <div class="navbar navbar-inverse navbar-static-top">
-          <div class="container">
-            <div class="navbar-header"><a href="index.html"><img src="Imagem/Logo T-Shaped.jpg" width="182" height="51"  alt=""/></a></div>
-            <div class="navbar-collapse collapse">
-              <ul class="nav navbar-nav">
+  <!-- Menu Restante -->
+  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <ul class="nav navbar-nav">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="Sobre.html">About</a></li>
                  <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Consulta <b class="caret"></b></a>
                   <ul class="dropdown-menu">
-                     <li><a href="BuscaVagas.php">Vagas</a></li>
-					 </li>  </ul>
-                </li>
-					
+                          <li><a href="BuscaVagas.php">Vagas</a></li>
+						   <li><a href="paginaBuscaCurriculos.php">Usuario</a></li>
+						   <li><a href="visualizarTshaped.php">T-Shaped</a></li>
+           </li>  </ul>
+                        
                 <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Cadastros <b class="caret"></b></a>
                   <ul class="dropdown-menu">
-                        <li><a href="paginaCadastroVaga.php">Vagas</a></li>
+                   <li class="active"><a href="paginaCadastroVaga.php">Vagas</a></li>
                     <li><a href="paginaCadastroEmpresa.html">Empresa</a></li>
                     <li><a href="paginaCadastroUsuario.html">Usuario</a></li>
-                                       
-                    
+                                       <li><a href="tshaped.php">T-Shaped</a></li>
+                 
                     </li>
-                  </ul>
-                </li>
-                
-                  <li></li>
-                  <li></li>
-                  <li></li></ul>
-						<div align="center" class="Login">
-							<label for="LOGIN"><span style="font-size: 15px">
-									LOGIN</span></label> <input type="text" name="LOGIN" id="LOGIN"> <label
-								for="SENHA" style="font-size: 15px"> SENHA </label> <input
-								type="password"> <input type="submit" name="submit"
-								id="submit" value="Enviar">
-						</div>
-					</div>
-				</div>
-			</div>
+                  </ul> </ul>  
+      <!-- Menu Login -->
+   <form class="navbar-form navbar-right" role="form">
+  <div class="form-group">
+    <label class="sr-only" for="exampleInputlogin">Login</label>
+    <input type="login" class="form-control" id="exampleInputPassword2" placeholder="Login">
+  </div>
+  <div class="form-group">
+    <label class="sr-only" for="exampleInputPassword2">Senha</label>
+    <input type="senha" class="form-control" id="exampleInputPassword2" placeholder="Senha">
+  </div>
+   <button type="submit" class="btn btn-default">Entrar</button>
+</form>
 
-
-		</div>
-	</div>
-
+   </div></nav>
+    <!-- Fim do Menu -->
 
 	<div align="center" class="Cabeça"
 		style="font-size: 36px; color: black;">Cadastro Vaga</div>
@@ -84,9 +84,6 @@ include "conexao.php";
 	<div align="justify" class="Formulario">
 
 
-
-		<p align="center">Cadastre suas vagas e encontre o perfil idel
-			para sua empresa!</p>
 
 <form class="form-horizontal" method="POST" action="vagasMain.php">
 
@@ -168,7 +165,11 @@ $getareavagasquery = mysql_query($getareavagas) or die (mysql_error());
 
 	</div>
 
-
+	<footer id="footer">
+		<p align="center">
+			<img align="center" src="imagem/rodape.jpg" width="990" height="117" alt="" />
+		</p>
+			</footer>
 
 
 	<script src="assets/js/jquery.js"></script>
@@ -177,15 +178,4 @@ $getareavagasquery = mysql_query($getareavagas) or die (mysql_error());
 </body>
 
 
-	<footer id="footer">
-		<p align="center">
-			<img align="center" src="imagem/rodape.jpg" width="990" height="117" alt="" />
-		</p>
-		<p class="pull-right">
-			<a href="#">Para cima</a>
-		</p>
-		<p>
-			&copy; T-Shaped 2013 Company, Inc. 
-		</p>
-	</footer>
 </html>

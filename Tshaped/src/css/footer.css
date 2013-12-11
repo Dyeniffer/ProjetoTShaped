@@ -1,21 +1,27 @@
-.footer {
+html, body, #wrap {height: 100%;}
+ 
+body > #wrap {height: auto; min-height: 100%;}
+ 
+#main {overflow:auto;
+	padding-bottom: 150px;}  /* deve ter a mesma altura do rodapé */
+ 
+#footer {
+ margin: 20px 250px 0px;
+    position: relative;
+      margin-left: 170px;
+}
 
-    height:10px; 
-    width: 100%; 
-    background-image: none;
-    background-repeat: repeat;
-    background-attachment: scroll;
-    background-position: 0% 0%;
-    position: fixed;
-    bottom: 0pt;
-    left: 0pt;
-
-}   
-
-    .footer_contents {
-
-        height:24px; 
-        width: 1000px;
-        margin:auto;
-
-    }
+#footer2 {
+ margin: 480px 250px 0px;
+    position: relative;
+      margin-left: 170px;
+}
+ 
+/*Opera Fix*/
+body:before {
+	content:"";
+	height:100%;
+	float:left;
+	width:0;
+	margin-top:-32767px;/
+}
