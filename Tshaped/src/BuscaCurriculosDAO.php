@@ -11,7 +11,7 @@ class BuscaCurriculosDAO extends PDOConnectionFactory {
 	}
 	public function areasAtuacao() {
 		try {
-			$stmt = $this->conex->prepare ( "SELECT areaAtuacao FROM usuario" );
+			$stmt = $this->conex->prepare ( "SELECT DISTINCT areaAtuacao FROM usuario" );
 			$stmt->execute ();
 			
 			while ( $dados = $stmt->fetch ( PDO::FETCH_OBJ ) ) {
