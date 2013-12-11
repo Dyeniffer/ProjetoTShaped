@@ -58,7 +58,7 @@ include "conexao.php";
                    <li class="active"><a href="paginaCadastroVaga.php">Vagas</a></li>
                     <li><a href="paginaCadastroEmpresa.html">Empresa</a></li>
                     <li><a href="paginaCadastroUsuario.html">Usuario</a></li>
-                                       <li><a href="tshaped.php">T-Shaped</a></li>
+                                      
                  
                     </li>
                   </ul> </ul>  
