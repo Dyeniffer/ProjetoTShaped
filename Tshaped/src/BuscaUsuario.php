@@ -8,7 +8,7 @@ include "conexao.php";
 
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
 

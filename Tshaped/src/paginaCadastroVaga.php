@@ -8,7 +8,7 @@ include "conexao.php";
 
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <!-- Mirrored from getbootstrap.com/examples/carousel/ by HTTrack Website Copier/3.x [XR&CO'2013], Thu, 10 Oct 2013 12:16:10 GMT -->
 <head>
