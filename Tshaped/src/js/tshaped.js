@@ -88,6 +88,8 @@ $(document).ready(function(){
 	
 	$("#salvarTshaped").click(function(){
 		
+                idUsuario = $("#idUsuario").val();
+                
 		$("#horizontal p").each(function(){
 			valorp = $(this).html();
 			tpGeral = 0;
@@ -97,7 +99,7 @@ $(document).ready(function(){
 			css_size = $(this).css('font-size');
 			
 			$.ajax({
-				url:'ajaxTshaped.php?valorp='+valorp+'&tipo='+tpGeral+'&css_left='+css_left+'&css_top='+css_top+'&css_fonte='+css_fonte+'&css_size='+css_size+'&idUsuario='+$("#idUsuario").val(),
+				url:'ajaxTshaped.php?valorp='+valorp+'&tipo='+tpGeral+'&css_left='+css_left+'&css_top='+css_top+'&css_fonte='+css_fonte+'&css_size='+css_size+'&idUsuario='+idUsuario,
 				type:'POST',
 				success:function(){
 					console.log('1');
@@ -116,7 +118,7 @@ $(document).ready(function(){
 			css_size = $(this).css('font-size');
 			
 			$.ajax({
-				url:'ajaxTshaped.php?valorp='+valorp+'&tipo='+tpGeral+'&css_left='+css_left+'&css_top='+css_top+'&css_fonte='+css_fonte+'&css_size='+css_size+'&idUsuario='+$("#idUsuario").val(),,
+				url:'ajaxTshaped.php?valorp='+valorp+'&tipo='+tpGeral+'&css_left='+css_left+'&css_top='+css_top+'&css_fonte='+css_fonte+'&css_size='+css_size+'&idUsuario='+idUsuario,
 				type:'POST',
 				success:function(){
 					console.log('1');

@@ -48,7 +48,7 @@ $dao = new BuscaVagasDao();
                   <ul class="dropdown-menu">
                           <li class="active"><a href="BuscaVagas.php">Vagas</a></li>
 						   <li><a href="paginaBuscaCurriculos.php">Usuario</a></li>
-						   <li><a href="visualizarTshaped.php">T-Shaped</a></li>
+						  
            </li>  </ul>
                         
                 <li class="dropdown">

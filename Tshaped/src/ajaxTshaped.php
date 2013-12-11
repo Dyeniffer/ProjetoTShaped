@@ -3,6 +3,8 @@
 include_once 'CadastroTShaped.php';
 include_once 'TShapedDAO.php';
 
+
+$id_usuario = $_GET['idUsuario'];
 $css_size = $_REQUEST['css_size'];
 $css_left = $_REQUEST['css_left'];
 $css_top = $_REQUEST['css_top'];
@@ -10,7 +12,7 @@ $css_fonte = $_REQUEST['css_fonte'];
 $tipo = $_REQUEST['tipo'];
 $valor = $_REQUEST['valorp'];
 //$id_usuario = $_SESSION['cod_usuario'];
-$id_usuario = $_REQUEST['idUsuario'];
+
 
 $tshaped = new CadastroTShaped();
 $tshaped->css_size = $css_size;
