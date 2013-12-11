@@ -57,7 +57,7 @@ $(document).ready(function(){
 	//submeter novo conhecimento
 	$("#enviar").click(function(){
 		var valorCampo;
-		//verifica se o campo está vazio
+		//verifica se o campo estï¿½ vazio
 		if($("#conhecimentoValue").val() == "") {
 				alert("Preencha o campo.");
 				return false;
@@ -97,7 +97,7 @@ $(document).ready(function(){
 			css_size = $(this).css('font-size');
 			
 			$.ajax({
-				url:'ajaxTshaped.php?valorp='+valorp+'&tipo='+tpGeral+'&css_left='+css_left+'&css_top='+css_top+'&css_fonte='+css_fonte+'&css_size='+css_size,
+				url:'ajaxTshaped.php?valorp='+valorp+'&tipo='+tpGeral+'&css_left='+css_left+'&css_top='+css_top+'&css_fonte='+css_fonte+'&css_size='+css_size+'&idUsuario='+$("#idUsuario").val(),
 				type:'POST',
 				success:function(){
 					console.log('1');
@@ -116,7 +116,7 @@ $(document).ready(function(){
 			css_size = $(this).css('font-size');
 			
 			$.ajax({
-				url:'ajaxTshaped.php?valorp='+valorp+'&tipo='+tpGeral+'&css_left='+css_left+'&css_top='+css_top+'&css_fonte='+css_fonte+'&css_size='+css_size,
+				url:'ajaxTshaped.php?valorp='+valorp+'&tipo='+tpGeral+'&css_left='+css_left+'&css_top='+css_top+'&css_fonte='+css_fonte+'&css_size='+css_size+'&idUsuario='+$("#idUsuario").val(),,
 				type:'POST',
 				success:function(){
 					console.log('1');
@@ -124,8 +124,15 @@ $(document).ready(function(){
 				dataType:'json'
 			});
 		});
+                
+                $("#salvarTshaped").val("Salvando Tshaped ...");
+                $("#salvarTshaped").attr("disabled",true);
 		
-		
+		setTimeout(function(){
+                    alert("tshaped cadastrado com sucesso!");
+                    window.location = "index.html";
+                },5000);
+                
 	});
 	
 	

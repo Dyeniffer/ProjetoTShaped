@@ -10,7 +10,7 @@ $css_fonte = $_REQUEST['css_fonte'];
 $tipo = $_REQUEST['tipo'];
 $valor = $_REQUEST['valorp'];
 //$id_usuario = $_SESSION['cod_usuario'];
-$id_usuario = $_REQUEST['id'];
+$id_usuario = $_REQUEST['idUsuario'];
 
 $tshaped = new CadastroTShaped();
 $tshaped->css_size = $css_size;

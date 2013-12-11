@@ -2,9 +2,9 @@
 
 <?php $id = $_GET['idUsuario'] ;?> 
 
-<html>
+<html lang="pt-br">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>T-shaped</title>
 <link href="css/tshaped.css" rel="stylesheet" type="text/css" />
 <link href="//code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" type="text/css" rel="stylesheet"/>

@@ -7,7 +7,7 @@ include "PDOConnectionFactory.php";
 
 class TShapedDAO extends PDOConnectionFactory {
 
-	// irá receber uma conexão
+	// irï¿½ receber uma conexï¿½o
 
 	public $conex = null;
 
@@ -23,22 +23,22 @@ class TShapedDAO extends PDOConnectionFactory {
 
  
 
-	// realiza uma inserção
+	// realiza uma inserï¿½ï¿½o
 
 	public function Insere( $tshaped ){
 
 		try{
 
-			// preparo a query de inserçao - Prepare Statement
+			// preparo a query de inserï¿½ao - Prepare Statement
 
 		
 			// isso ficaria uma porta aberta para um SQL Injection.
 
 			$stmt = $this->conex->prepare("INSERT INTO tshaped (css_top ,css_left,css_fonte,css_size,id_usuario,tp_conhecimento,texto) VALUES (?, ?, ?, ?, ?, ?, ?)");
 
-			// valores encapsulados nas variáveis da classe CadastroEmpresa.
+			// valores encapsulados nas variï¿½veis da classe CadastroEmpresa.
 
-			// sequencia de índices que representa cada valor de minha query
+			// sequencia de ï¿½ndices que representa cada valor de minha query
 
 		
 
@@ -50,9 +50,8 @@ class TShapedDAO extends PDOConnectionFactory {
 
 			$stmt->bindValue(4, $tshaped->css_size);
 
-			//$stmt->bindValue(5, $tshaped->id_usuario);
-			$stmt->bindValue(5, 1);
-			
+			$stmt->bindValue(5, $tshaped->id_usuario);
+                        
 			$stmt->bindValue(6, $tshaped->tp_conhecimento);
 			
 			$stmt->bindValue(7, $tshaped->texto);
@@ -63,7 +62,7 @@ class TShapedDAO extends PDOConnectionFactory {
 
  
 
-			// fecho a conexão
+			// fecho a conexï¿½o
 
 			$this->conex = null;
 
@@ -95,7 +94,7 @@ class TShapedDAO extends PDOConnectionFactory {
 			
 			return $dadosTshaped;
 		
-			// fecho a conexão
+			// fecho a conexï¿½o
 		
 			$this->conex = null;
 		
@@ -127,7 +126,7 @@ class TShapedDAO extends PDOConnectionFactory {
 				
 			return $dadosTshaped;
 	
-			// fecho a conexão
+			// fecho a conexï¿½o
 	
 			$this->conex = null;
 	
